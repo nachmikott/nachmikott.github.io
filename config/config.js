@@ -21,10 +21,6 @@ export const navigation = {
     {
       title: "Links",
       link: "/links",
-    },
-    {
-      title: "Blog",
-      link: "TBD",
     }
   ],
 }
@@ -138,12 +134,16 @@ export const links = {
   description: "Fullstack Software Engineer",
   cards: [
     {
-      title: "My GitHub",
+      title: "GitHub",
       link: "https://github.com/nachmikott/",
     },
     {
-      title: "My LinkedIn",
+      title: "LinkedIn",
       link: "https://www.linkedin.com/in/nachmikott/",
     },
+    {
+      title: 'Upwork',
+      link: "https://www.upwork.com/freelancers/~013fb7d3e27d4d03d7?mp_source=share"
+    }
   ]
 }
