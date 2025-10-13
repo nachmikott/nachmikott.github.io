@@ -129,7 +129,13 @@ a {
 
 .icon-style {
   font-family: $font-family-sans-serif;
-  color: var(--color-accent);
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+}
+
+.icon-link:hover .icon-style,
+.icon-link:focus .icon-style {
+  color: var(--color-accent-hover);
 }
 
 .card-work {
@@ -138,11 +144,49 @@ a {
   border: 1px solid var(--color-border);
   background-color: var(--color-surface);
   color: var(--color-text);
+  display: flex;
+  flex-direction: column;
 }
 
 .card-work:hover {
   box-shadow: 0 20px 45px var(--card-shadow);
   transform: translateY(-4px);
+}
+
+.card-work > .d-flex {
+  flex: 1;
+}
+
+.project-card {
+  cursor: pointer;
+}
+
+.project-card:focus {
+  outline: 3px solid var(--color-accent-hover);
+  outline-offset: 6px;
+}
+
+.project-card__icons {
+  margin-top: auto;
+  text-align: right;
+}
+
+.project-detail__icons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.project-detail__icon {
+  font-size: 1.5rem;
+}
+
+.project-detail__icons .icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.5rem;
 }
 
 .card-image {

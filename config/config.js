@@ -1,7 +1,7 @@
 
 import profile from './profile.jpg';
-import { faAppStore, faGithub, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
-import { } from '@fortawesome/free-solid-svg-icons';
+import { faAppStore, faGithub, faGooglePlay, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEarth } from '@fortawesome/free-solid-svg-icons';
 
 export const navigation = {
   name: "Nachmi",
@@ -22,10 +22,6 @@ export const navigation = {
       title: "Links",
       link: "/links",
     },
-    // {
-    //   title: "Blog",
-    //   link: "https://medium.com/@nachmikott",
-    // }
   ],
 }
 export const intro = {
@@ -85,14 +81,31 @@ export const projects = {
   title: "Projects",
   cards: [
     {
+      slug: 'cascadia-js-hackathon-2025',
       title: "Clueless Crafter",
-      description: "TBD",
+      description: "🏗️ helps reduce friction for real estate developers and individuals moving from idea to permit by providing natural language tools in a user-friendly experience.",
+      demoVideo: 'https://player.vimeo.com/video/1122733432?badge=0&autopause=0&player_id=0&app_id=58479',
       icons: [
         {
           icon: faGithub,
           link: "https://github.com/nachmikott/cascadia-js-hackathon-2025",
         },
-      ]
+        {
+          icon: faLinkedin,
+          link: "https://www.linkedin.com/posts/nachmi-kott_cascadiajs-cascadiaaihackathon-openai-activity-7378472914586812416-Rxt6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFUD2q8BxlIhAMY2SvGokl5qbhiR8iaMVKs"
+        }
+      ],
+    },
+    {
+      slug: 'flask_wiki',
+      title: "Flask Wiki",
+      description: "A Flask RESTful API that serves you data sourced from Wikitech’s Analytics/AQS/Pageviews RESTful APIs with some extra functionality",
+      icons: [
+        {
+          icon: faGithub,
+          link: "https://github.com/nachmikott/flask_wiki",
+        },
+      ],
     },
   ],
 }
@@ -128,15 +141,18 @@ export const links = {
   description: "FullsStack Software Engineer",
   cards: [
     {
-      title: "My website",
+      title: "Portfolio Website",
+      icon: faEarth,
       link: "https://nachmikott.com/",
     },
     {
-      title: "My GitHub",
+      title: "GitHub",
+      icon: faGithub,
       link: "https://github.com/nachmikott/",
     },
     {
-      title: "My LinkedIn",
+      title: "LinkedIn",
+      icon: faLinkedin,
       link: "https://www.linkedin.com/in/nachmi-kott/",
     },
   ]

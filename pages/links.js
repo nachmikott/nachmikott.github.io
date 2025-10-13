@@ -1,5 +1,6 @@
 import React, { Fragment, useMemo } from 'react';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Footer } from '../components/Footer';
 import { Nav } from '../components/Navbar';
 import { links, navigation, SEO } from '../config/config';
@@ -25,7 +26,7 @@ export default function Home() {
           <h3 className="mt-3">{links.title}</h3>
           <p>{links.description}</p>
           {links.cards.map((value, index) => (
-            <Button key={index} title={value.title} link={value.link} />
+            <Button key={index} title={value.title} link={value.link} icon={value.icon} />
           ))}
         </div>
         <Footer />
@@ -35,13 +36,16 @@ export default function Home() {
 }
 
 
-function Button({ title, link }) {
+function Button({ title, link, icon }) {
   return (
     <div className="row justify-content-center">
       <div className="card card-work mx-sm-4 my-2" style={{ width: "20rem" }}>
         <Link href={link}>
           <a target="_blank" rel="noreferrer">
-            <h4 className="text-primary py-3 px-3">{title}</h4>
+            <div className="d-flex align-items-center gap-3 py-3 px-3">
+              <h4 className="text-primary text-end mb-0 flex-grow-1">{title}</h4>
+              {icon && <FontAwesomeIcon size={24} icon={icon} className="icon-style" />}
+            </div>
           </a>
         </Link>
       </div>
