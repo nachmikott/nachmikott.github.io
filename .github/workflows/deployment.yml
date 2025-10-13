@@ -37,7 +37,7 @@ jobs:
       # - run: npm run prebuild # build automatically runs prebuild
       - run: npm run build
       - run: npm run export
-      - run: touch ./docs/.nojekyll
+      - run: touch ./out/.nojekyll
 
       # https://github.com/marketplace/actions/deploy-to-github-pages
       - name: Deploy 🚀
