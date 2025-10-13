@@ -2,7 +2,7 @@ const fs = require('fs')
 
 const args = process.argv.slice(2)
 const content = args.join('\n')
-const filePath = './CNAME'
+const filePath = './out/CNAME'
 
 /**
  * Add CNAME to the file
@@ -11,7 +11,7 @@ const filePath = './CNAME'
  * 
  * node script/cname.js domain1 domain2 domain3
  * i.e.
- * node script/cname.js nachmikott.com www.nachmikott.com
+ * node script/cname.js example.com www.example.com
  */
 console.log("Creating CNAME...")
 fs.writeFile(filePath, content, (err) => {

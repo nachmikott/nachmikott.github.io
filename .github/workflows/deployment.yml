@@ -7,12 +7,10 @@ name: Node.js CI
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   build:
-    runs-on: macos-11
+    runs-on: macos-latest
 
     # env:
     # Repository name
