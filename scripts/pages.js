@@ -1,5 +1,5 @@
 const ghpages = require("gh-pages");
-const build_path = './out';
+const build_path = './docs';
 
 const args = process.argv.slice(2);
 const username = args[0];
