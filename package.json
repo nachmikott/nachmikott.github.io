@@ -14,9 +14,9 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "export": "next export -o docs/",
-    "predeploy": "npm run build && npm run export && touch ./docs/.nojekyll",
-    "deploy": "npm run custom-domain && node scripts/pages.js nachmikott main",
+    "export": "next export",
+    "predeploy": "npm run build && npm run export && touch ./out/.nojekyll",
+    "deploy": "npm run custom-domain && node scripts/pages.js nachmikott gh-pages",
     "custom-domain": "node scripts/cname.js nachmikott.com www.nachmikott.com",
     "lint": "next lint"
   },
