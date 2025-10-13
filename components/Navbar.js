@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link'
+import React, { useState } from 'react';
+import Link from 'next/link';
 
 export const Nav = ({ title, links }) => {
 
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-primary text-light">
+    <nav className="navbar navbar-expand-sm navbar-dark navbar-custom">
       <div className="container">
         <Link href="/">
           {/* <Image src={Logo} alt="Logo" width="36" height="36" className="vertical-align-middle" /> */}
@@ -19,8 +18,8 @@ export const Nav = ({ title, links }) => {
         <button
           className="custom-toggler navbar-toggler"
           type="button" data-toggle="collapse"
-          data-target="#navbarsExample09"
-          aria-controls="navbarsExample09"
+          data-target="#primary-navigation"
+          aria-controls="primary-navigation"
           aria-expanded={!isNavCollapsed ? true : false}
           aria-label="Toggle navigation"
           onClick={handleNavCollapse}
@@ -28,13 +27,10 @@ export const Nav = ({ title, links }) => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div
-          className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`}
-          id="navbarsExample09"
-        >
-          <div className="navbar-nav">
+        <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="primary-navigation">
+          <div className="navbar-nav mb-2 mb-sm-0">
             {links.map((value, index) => (
-              <Link key={index} href={value.link} >
+              <Link key={index} href={value.link}>
                 <a className="nav-link text-light">{value.title}</a>
               </Link>
             ))}

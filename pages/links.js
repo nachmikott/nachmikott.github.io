@@ -1,18 +1,26 @@
-import React, { Fragment } from 'react';
-import getConfig from 'next/config'
+import React, { Fragment, useMemo } from 'react';
 import Link from 'next/link';
 import { Footer } from '../components/Footer';
-import { links, SEO, } from '../config/config';
+import { Nav } from '../components/Navbar';
+import { links, navigation, SEO } from '../config/config';
 import { Header } from '../components/Header';
 
-const { publicRuntimeConfig } = getConfig()
-
 export default function Home() {
+  const navLinks = useMemo(
+    () =>
+      navigation.links.map((item) => ({
+        ...item,
+        link: item.link.startsWith('#') ? `/${item.link}` : item.link,
+      })),
+    []
+  );
+
   return (
     <Fragment>
       <Header seo={SEO} />
-      <div className="d-flex flex-column justify-content-between bg-secondary min-vh-100">
-        <div className="py-5 px-5 container text-center">
+      <Nav title={navigation.name} links={navLinks} />
+      <main className="bg-secondary min-vh-100 d-flex flex-column">
+        <div className="py-5 px-5 container text-center flex-grow-1">
           <img className="img-fluid my-3 card-image" width="150" height="150" src={links.image} alt="profile of nachmikott" />
           <h3 className="mt-3">{links.title}</h3>
           <p>{links.description}</p>
@@ -21,7 +29,7 @@ export default function Home() {
           ))}
         </div>
         <Footer />
-      </div>
+      </main>
     </Fragment>
   );
 }

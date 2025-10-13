@@ -1,78 +1,30 @@
 // Custom.scss
 // https://getbootstrap.com/docs/5.0/customize/sass/
 
-
-// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc).
 @import "~bootstrap/scss/functions";
 
+// 2. Palette
+$dark-green: #042a2b;
+$moonstone: #5eb1bf;
+$light-cyan: #cdedf6;
+$orange-crayola: #ef7b45;
+$chili-red: #d84727;
+$primary: $dark-green;
+$secondary: $light-cyan;
+$light: #ffffff;
+$dark: $dark-green;
 
-// 2. Include any default variable overrides here
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap');
+$font-family-sans-serif: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-// $primary-background: #FFFFFF;
-// $secondary-background: #F7F7F7;
-// $tertiary-background: #365B6D;
-
-// $primary-font: #000000;
-// $secondary-font: #F7F7F7;
-// $tertiary-font: #365B6D;
-// $inverted-font: #FFFFFF;
-
-// bootstrap overrides 
-$primary: #365B6D;
-$secondary: #F7F7F7;
-$light: #FFFFFF;
-
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
-$font-family-sans-serif: -apple-system, 'Barlow', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-$card-border-radius: 15px;
-
-
-
-// font 
-// Title
-// font-family: Barlow;
-// font-style: normal;
-// font-weight: bold;
-// font-size: 64px;
-// line-height: 77px;
-
-// Heading1
-// font-family: Barlow;
-// font-style: normal;
-// font-weight: bold;
-// font-size: 50px;
-// line-height: 60px;
-
-// Heading2
-// font-family: Barlow;
-// font-style: normal;
-// font-weight: normal;
-// font-size: 24px;
-// line-height: 29px;
-
-// Lead Text
-// font-family: Barlow;
-// font-style: normal;
-// font-weight: normal;
-// font-size: 18px;
-// line-height: 22px;
-
-// Normal
-// font-family: Barlow;
-// font-style: normal;
-// font-weight: normal;
-// font-size: 15px;
-// line-height: 18px;
-
-
+$card-border-radius: 18px;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
-
 
 // Layout & components (optional Bootstrap components)
 @import "~bootstrap/scss/root";
@@ -110,43 +62,185 @@ $card-border-radius: 15px;
 // Utilities
 @import "~bootstrap/scss/utilities/api";
 
+// 4. Theme tokens
+:root {
+  --color-bg: #f2fbff;
+  --color-surface: #ffffff;
+  --color-surface-alt: #e8f6fa;
+  --color-text: #062226;
+  --color-muted: rgba(6, 34, 38, 0.72);
+  --color-primary: #042a2b;
+  --color-accent: #ef7b45;
+  --color-accent-hover: #f39769;
+  --color-primary-hover: #f39769;
+  --color-border: rgba(4, 42, 43, 0.08);
+  --card-shadow: rgba(4, 42, 43, 0.08);
+  --navbar-bg: #33658a;
+  --navbar-text: #ffffff;
+  --toggle-border: rgba(255, 255, 255, 0.4);
+}
 
-// 5. Add additional custom code here
+// 5. Global styles
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: $font-family-sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   text-decoration: none;
+  color: var(--color-accent);
+  transition: color 0.2s ease;
+
+}
+
+.bg-secondary {
+  background-color: var(--color-surface-alt) !important;
+  transition: background-color 0.3s ease;
+}
+
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-white,
+.bg-light {
+  background-color: var(--color-surface) !important;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.text-dark {
+  color: var(--color-text) !important;
+}
+
+.text-secondary {
+  color: var(--color-muted) !important;
 }
 
 .icon-style {
   font-family: $font-family-sans-serif;
-  color: $primary;
+  color: var(--color-accent);
 }
 
-
 .card-work {
-  transition: box-shadow .3s;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: $card-border-radius;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
 
 .card-work:hover {
-  box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+  box-shadow: 0 20px 45px var(--card-shadow);
+  transform: translateY(-4px);
 }
 
 .card-image {
-  transition: all .3s;
+  transition: all 0.3s ease;
   border-radius: $card-border-radius;
-  box-shadow: 1rem 1rem $primary;
+  box-shadow: 1rem 1rem rgba($moonstone, 0.35);
 }
 
 .card-image:hover {
   transform: translate(-0.5rem, -0.5rem);
-  box-shadow: 2rem 2rem $primary;
+  box-shadow: 2rem 2rem rgba($orange-crayola, 0.45);
+}
+
+.navbar-custom {
+  background-color: var(--navbar-bg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: var(--navbar-text);
+  transition: color 0.2s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link:focus,
+.navbar-custom .nav-link.active {
+  color: var(--color-accent-hover) !important;
+}
+
+.navbar-toggler {
+  border-color: var(--toggle-border);
+}
+
+.navbar-toggler-icon {
+  filter: invert(100%);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+}
+
+.btn-primary:focus {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(4, 42, 43, 0.25);
+}
+
+.btn-outline-primary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--color-primary-hover) !important;
+  color: #ffffff;
+  border-color: var(--color-primary-hover) !important;
+}
+
+.btn-outline-primary:focus {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.25rem rgba(4, 42, 43, 0.18);
+}
+
+footer {
+  background-color: var(--color-surface-alt);
+  color: var(--color-muted);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer a {
+  color: var(--color-accent);
+}
+
+.list-group-item {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.ratio iframe {
+  border-radius: 16px;
+  background-color: var(--color-surface);
+}
+
+::selection {
+  background-color: rgba($orange-crayola, 0.35);
+  color: #fff;
 }
