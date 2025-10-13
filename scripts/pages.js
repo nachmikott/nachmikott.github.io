@@ -1,5 +1,5 @@
 const ghpages = require("gh-pages");
-const build_path = './docs';
+const build_path = './out';
 
 const args = process.argv.slice(2);
 const username = args[0];
@@ -17,7 +17,7 @@ console.log(`Deploying to ${repoURL} branch ${branch}`);
  * 
  * node scripts/pages.js <username> <branch>
  * i.e.
- * node scripts/pages.js nachmikott main
+ * node scripts/pages.js username main
  */
 ghpages.publish(
   build_path,
