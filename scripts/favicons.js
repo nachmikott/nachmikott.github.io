@@ -1,7 +1,8 @@
 const favicons = require("favicons")
 const fs = require('fs')
+const Jimp = require('jimp')
 
-const source = "config/profile.png" // Source image(s). `string`, `buffer` or array of `string`
+const source = "config/profile.jpg" // Source image(s). `string`, `buffer` or array of `string`
 
 const configuration = {
   path: "/", // Path for overriding default icons path. `string`
@@ -12,7 +13,7 @@ const configuration = {
   developerURL: null, // Your (or your developer's) URL. `string`
   dir: "auto", // Primary text direction for name, short_name, and description
   lang: "en-US", // Primary language for name and short_name
-  background: "#fff", // Background colour for flattened icons. `string`
+  background: null, // Background colour for flattened icons. `string`
   theme_color: "#fff", // Theme color user for example in Android's task switcher. `string`
   appleStatusBarStyle: "black-translucent", // Style for Apple status bar: "black-translucent", "default", "black". `string`
   display: "standalone", // Preferred display mode: "fullscreen", "standalone", "minimal-ui" or "browser". `string`
@@ -77,5 +78,23 @@ const callback = function (error, response) {
   console.log("Successfully created favicons");
 };
 
-console.log('Generating favicons...');
-favicons(source, configuration, callback);
+const createCircularSource = async () => {
+  const size = 512;
+  const image = await Jimp.read(source);
+  image.cover(size, size);
+  if (typeof image.circle === 'function') {
+    image.circle();
+  }
+  return image.getBufferAsync(Jimp.MIME_PNG);
+};
+
+(async () => {
+  console.log('Generating favicons...');
+  try {
+    const circularSource = await createCircularSource();
+    favicons(circularSource, configuration, callback);
+  } catch (error) {
+    console.error('Failed to generate favicons:', error);
+    process.exit(1);
+  }
+})();

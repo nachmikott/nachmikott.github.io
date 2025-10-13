@@ -8,12 +8,12 @@ export const Nav = ({ title, links }) => {
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-secondary">
+    <nav className="navbar navbar-expand-sm navbar-light bg-primary text-light">
       <div className="container">
         <Link href="/">
           {/* <Image src={Logo} alt="Logo" width="36" height="36" className="vertical-align-middle" /> */}
-          <a className="navbar-brand">
-            <span className="">{title}</span>
+          <a className="navbar-brand text-light">
+            <span className="text-light">{title}</span>
           </a>
         </Link>
         <button
@@ -35,7 +35,7 @@ export const Nav = ({ title, links }) => {
           <div className="navbar-nav">
             {links.map((value, index) => (
               <Link key={index} href={value.link} >
-                <a className="nav-link">{value.title}</a>
+                <a className="nav-link text-light">{value.title}</a>
               </Link>
             ))}
           </div>
