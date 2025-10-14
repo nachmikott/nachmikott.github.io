@@ -26,3 +26,12 @@ projects:
   icons:
   - label: GitHub
     url: https://github.com/nachmikott/flask_wiki
+- slug: media-web-file-optimization
+  title: Image optimization for the web
+  description: 'Turn PNGs into a set of optimized files for the web at multiple DPRs
+    and extensions types.
+
+    '
+  icons:
+  - label: GitHub
+    url: https://github.com/nachmikott/media-web-file-optimization
