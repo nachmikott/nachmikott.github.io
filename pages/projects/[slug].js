@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Header } from '../../components/Header';
 import { Nav } from '../../components/Navbar';
 import { Footer } from '../../components/Footer';
-import { navigation, projects, SEO } from '../../config/config';
+import { navigation, SEO } from '../../config/config';
+import { loadProjects } from '../../lib/projects';
 
 export async function getStaticPaths() {
-  const paths = projects.cards
+  const projectCards = loadProjects();
+  const paths = projectCards
     .filter((card) => Boolean(card.slug))
     .map((card) => ({ params: { slug: card.slug } }));
 
@@ -19,7 +21,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const project = projects.cards.find((card) => card.slug === params.slug);
+  const projectCards = loadProjects();
+  const project = projectCards.find((card) => card.slug === params.slug);
 
   if (!project) {
     return {
@@ -85,9 +88,9 @@ export default function ProjectDetail({ project }) {
               </div>
             )}
           </div>
-          <div className="card card-work p-4">
+          <div className="card card-work p-4 project-detail__body">
             {project.demoVideo && (
-              <div className="ratio ratio-16x9 mb-4">
+              <div className="ratio ratio-16x9 mt-4">
                 <iframe
                   src={project.demoVideo}
                   title={`${project.title} demo video`}
@@ -99,7 +102,8 @@ export default function ProjectDetail({ project }) {
                 />
               </div>
             )}
-            <div className="ratio ratio-16x9">
+            
+            <div className="project-detail__primary">
               <iframe
                 src={`https://nachmikott.com/${project.slug}`}
                 title={`${project.title} preview`}
@@ -109,8 +113,6 @@ export default function ProjectDetail({ project }) {
                 allowFullScreen
               />
             </div>
-
-            
           </div>
         </div>
       </main>

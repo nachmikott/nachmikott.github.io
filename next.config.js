@@ -1,3 +1,5 @@
+const path = require('path');
+
 const isProd = process.env.NODE_ENV === 'production'
 /*
  * Gets the BASE_PATH from the command used to start this app.
@@ -25,12 +27,34 @@ console.warn(
   `P.S. [basePath] is {${basePath}}`
 )
 
+class WatchExternalFilesPlugin {
+  constructor(files = []) {
+    this.files = files;
+  }
+
+  apply(compiler) {
+    compiler.hooks.afterCompile.tap('WatchExternalFilesPlugin', (compilation) => {
+      this.files.forEach((file) => {
+        compilation.fileDependencies.add(file);
+      });
+    });
+  }
+}
+
 const nextConfig = {
   reactStrictMode: true,
   basePath: basePath,
   assetPrefix: basePath,
   publicRuntimeConfig: {
     basePath: basePath,
+  },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      const projectsFile = path.resolve(__dirname, 'projects.yaml');
+      config.plugins.push(new WatchExternalFilesPlugin([projectsFile]));
+    }
+
+    return config;
   },
 }
 

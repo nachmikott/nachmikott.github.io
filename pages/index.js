@@ -5,8 +5,19 @@ import { Skills, Projects } from '../components/Work';
 import { Footer, Contact } from '../components/Footer';
 import { about, contact, intro, navigation, projects, SEO, work } from '../config/config';
 import { Header } from '../components/Header';
+import { loadProjects } from '../lib/projects';
 
-export default function Home() {
+export async function getStaticProps() {
+  const projectCards = loadProjects();
+
+  return {
+    props: {
+      projectCards,
+    },
+  };
+}
+
+export default function Home({ projectCards }) {
   return (
     <Fragment>
       <Header seo={SEO} />
@@ -30,7 +41,7 @@ export default function Home() {
       />
       <Projects
         title={projects.title}
-        cards={projects.cards}
+        cards={projectCards}
       />
       <Contact
         title={contact.title}
