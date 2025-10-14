@@ -14,7 +14,7 @@ projects:
   - slug: flask_wiki
     title: "Flask Wiki"
     description: |
-      A Flask RESTful API that serves data sourced from Wikitech’s Analytics/AQS/Pageviews
+      Flask RESTful API that serves data sourced from Wikitech’s Analytics/AQS/Pageviews
       RESTful APIs with additional functionality for analysis.
     icons:
       - label: GitHub
