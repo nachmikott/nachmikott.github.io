@@ -101,7 +101,7 @@ export const contact = {
 // SEARCH ENGINE 
 export const SEO = {
   // 50 - 60 char  
-  title: "Nachmi Kott | FullsStack Software Engineer",
+  title: "Nachmi Kott | Fullstack Software Engineer",
   description: "I am a Senior Software Engineer. I graduated from the University of Maryland in 2017 with a bachelors degree in Computer Science.",
   image: profile.src,
 }
@@ -109,7 +109,7 @@ export const SEO = {
 export const links = {
   image: profile.src,
   title: "@nachmikott",
-  description: "FullsStack Software Engineer",
+  description: "Fullstack Software Engineer",
   cards: [
     {
       title: "Portfolio Website",
