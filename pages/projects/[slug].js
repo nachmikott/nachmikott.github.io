@@ -122,9 +122,14 @@ export default function ProjectDetail({ project, readmeMarkdown }) {
             )}
           </div>
           <div className="card card-work p-4 project-detail__body">
+            <div className="project-detail__primary project-markdown">
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {readmeMarkdown}
+              </ReactMarkdown>
+            </div>
             {project.demoVideo && (
-              <div className="mb-4">
-                <h2 className="h5 text-primary fw-semibold">Demo</h2>
+              <div className="mt-4">
+                <h2 className="h5 text-primary text-center fw-semibold">Demo Video</h2>
                 <div className="ratio ratio-16x9 mt-2">
                   <iframe
                     src={project.demoVideo}
@@ -138,14 +143,6 @@ export default function ProjectDetail({ project, readmeMarkdown }) {
                 </div>
               </div>
             )}
-
-            {project.demoVideo && <div className="my-4" />}
-
-            <div className="project-detail__primary project-markdown">
-              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                {readmeMarkdown}
-              </ReactMarkdown>
-            </div>
           </div>
         </div>
       </main>
