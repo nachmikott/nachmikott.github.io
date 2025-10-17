@@ -202,10 +202,38 @@ a {
 
 .project-markdown {
   width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .project-markdown > *:last-child {
   margin-bottom: 0;
+}
+
+.project-markdown img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1.25rem 0;
+}
+
+.project-markdown pre,
+.project-markdown code {
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.project-markdown table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.project-markdown table th,
+.project-markdown table td {
+  border: 1px solid rgba(4, 42, 43, 0.12);
+  padding: 0.5rem 0.75rem;
 }
 
 .card-image {
