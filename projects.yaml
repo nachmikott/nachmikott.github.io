@@ -1,21 +1,37 @@
 projects:
-  - slug: cascadia-js-hackathon-2025
-    title: "Clueless Crafter"
-    description: |
-      🏗️ "Clueless Crafter" helps reduce friction for real estate developers and
-      individuals moving from idea to permit by providing natural language tools
-      in a user-friendly experience.
-    demoVideo: "https://player.vimeo.com/video/1122733432?badge=0&autopause=0&player_id=0&app_id=58479"
-    icons:
-      - label: GitHub
-        url: "https://github.com/nachmikott/cascadia-js-hackathon-2025"
-      - label: LinkedIn
-        url: "https://www.linkedin.com/posts/nachmi-kott_cascadiajs-cascadiaaihackathon-openai-activity-7378472914586812416-Rxt6"
-  - slug: flask_wiki
-    title: "Flask Wiki"
-    description: |
-      Flask RESTful API that serves data sourced from Wikitech’s Analytics/AQS/Pageviews
-      RESTful APIs with additional functionality for analysis.
-    icons:
-      - label: GitHub
-        url: "https://github.com/nachmikott/flask_wiki"
+- slug: cascadia-js-hackathon-2025
+  title: Clueless Crafter
+  description: '🏗️ "Clueless Crafter" helps reduce friction for real estate developers
+    and
+
+    individuals moving from idea to permit by providing natural language tools
+
+    in a user-friendly experience.
+
+    '
+  demoVideo: https://player.vimeo.com/video/1122733432?badge=0&autopause=0&player_id=0&app_id=58479
+  icons:
+  - label: GitHub
+    url: https://github.com/nachmikott/cascadia-js-hackathon-2025
+  - label: LinkedIn
+    url: https://www.linkedin.com/posts/nachmi-kott_cascadiajs-cascadiaaihackathon-openai-activity-7378472914586812416-Rxt6
+- slug: flask_wiki
+  title: Flask Wiki
+  description: 'A RESTful API, built using Flask, that serves data sourced from Wikitech’s
+    Analytics/AQS/Pageviews
+
+    RESTful APIs with additional functionality for analysis.
+
+    '
+  icons:
+  - label: GitHub
+    url: https://github.com/nachmikott/flask_wiki
+- slug: media-web-file-optimization
+  title: Image optimization for the web
+  description: 'Turn PNGs into a set of optimized files for the web at multiple DPRs
+    and extensions types.
+
+    '
+  icons:
+  - label: GitHub
+    url: https://github.com/nachmikott/media-web-file-optimization
