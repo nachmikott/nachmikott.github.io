@@ -55,7 +55,7 @@ export const work = {
   title: "What I do",
   cards: [
     {
-      title: "Project Managament",
+      title: "Project Management",
       description: "I turn ideas into deliverables. I have experience turning business initiatives into technical solutions using agile methodologies and engineering best practices.",
       icons: null,
     },
