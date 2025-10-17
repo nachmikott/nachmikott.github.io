@@ -2,6 +2,8 @@ import React, { Fragment, useMemo } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import { Header } from '../../components/Header';
 import { Nav } from '../../components/Navbar';
 import { Footer } from '../../components/Footer';
@@ -30,14 +32,45 @@ export async function getStaticProps({ params }) {
     };
   }
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+  const readmeUrl = `https://raw.githubusercontent.com/nachmikott/${project.slug}/main/README.md`;
+
+  let readmeMarkdown = null;
+
+  try {
+    const response = await fetch(readmeUrl, {
+      headers: {
+        Accept: 'text/markdown',
+      },
+      signal: controller.signal,
+    });
+
+    if (response.ok) {
+      readmeMarkdown = await response.text();
+    } else {
+      console.warn(`Failed to fetch README for ${project.slug}: ${response.status}`);
+    }
+  } catch (error) {
+    if (error.name === 'AbortError') {
+      console.warn(`Fetching README for ${project.slug} timed out`);
+    } else {
+      console.error(`Error fetching README for ${project.slug}:`, error);
+    }
+  } finally {
+    clearTimeout(timeoutId);
+  }
+
   return {
     props: {
       project,
+      readmeMarkdown,
     },
   };
 }
 
-export default function ProjectDetail({ project }) {
+export default function ProjectDetail({ project, readmeMarkdown }) {
   const router = useRouter();
 
   const navLinks = useMemo(
@@ -90,28 +123,28 @@ export default function ProjectDetail({ project }) {
           </div>
           <div className="card card-work p-4 project-detail__body">
             {project.demoVideo && (
-              <div className="ratio ratio-16x9 mt-4">
-                <iframe
-                  src={project.demoVideo}
-                  title={`${project.title} demo video`}
-                  width="100%"
-                  height="100%"
-                  style={{ border: '0' }}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+              <div className="mb-4">
+                <h2 className="h5 text-primary fw-semibold">Demo</h2>
+                <div className="ratio ratio-16x9 mt-2">
+                  <iframe
+                    src={project.demoVideo}
+                    title={`${project.title} demo video`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: '0' }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
               </div>
             )}
-            
-            <div className="project-detail__primary">
-              <iframe
-                src={`https://nachmikott.com/${project.slug}`}
-                title={`${project.title} preview`}
-                width="100%"
-                height="100%"
-                style={{ border: '0' }}
-                allowFullScreen
-              />
+
+            {project.demoVideo && <div className="my-4" />}
+
+            <div className="project-detail__primary project-markdown">
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {readmeMarkdown}
+              </ReactMarkdown>
             </div>
           </div>
         </div>
