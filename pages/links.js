@@ -38,12 +38,12 @@ export default function Home() {
 
 function Button({ title, link, icon }) {
   return (
-    <div className="row justify-content-center">
-      <div className="card card-work mx-sm-4 my-2" style={{ width: "20rem" }}>
+    <div className="row justify-content-center m-3">
+      <div className="btn btn-outline-primary link-card border-0 link-card">
         <Link href={link} target="_blank" rel="noreferrer">
           <div className="d-flex align-items-center gap-3 py-3 px-3">
-            <h4 className="text-primary text-end mb-0 flex-grow-1">{title}</h4>
-            {icon && <FontAwesomeIcon size={24} icon={icon} className="icon-style" />}
+            {icon && <FontAwesomeIcon icon={icon} size='lg' />}
+            <h4 className='mb-0'>{title}</h4>
           </div>
         </Link>
       </div>

@@ -73,6 +73,7 @@ $card-border-radius: 18px;
   --color-accent: #ef7b45;
   --color-accent-hover: #f39769;
   --color-primary-hover: #f39769;
+  --color-on-accent: #ffffff;
   --color-border: rgba(4, 42, 43, 0.08);
   --card-shadow: rgba(4, 42, 43, 0.08);
   --navbar-bg: #33658a;
@@ -339,4 +340,23 @@ footer a {
 ::selection {
   background-color: rgba($orange-crayola, 0.35);
   color: #fff;
+}
+
+
+.link-card {
+  width: 20rem;
+  background-color: var(--color-surface);
+  border-radius: 18px;
+
+  svg,
+  h4 {
+    color: var(--color-primary);
+  }
+}
+
+.link-card:hover {
+  svg,
+  h4 {
+    color: var(--color-on-accent);
+  }
 }
