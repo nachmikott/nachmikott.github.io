@@ -1,8 +1,5 @@
 import React from 'react';
-import getConfig from 'next/config'
 import Link from 'next/link'
-
-const { publicRuntimeConfig } = getConfig()
 
 export const Intro = ({ title, description, image, buttons }) => {
 	return (
@@ -15,19 +12,16 @@ export const Intro = ({ title, description, image, buttons }) => {
 					<div className="d-flex flex-wrap align-items-center gap-3">
 						{buttons.map((value, index) => {
 							const isExternal = value.link.startsWith('http') || value.link.startsWith('mailto:');
-							return value.isPrimary ? (
-								<Link key={index} href={value.link}>
-									<a className="btn btn-primary">{value.title}</a>
-								</Link>
-							) : (
-								<Link key={index} href={value.link}>
-									<a
-										className="btn btn-outline-primary"
-										target={isExternal ? '_blank' : undefined}
-										rel={isExternal ? 'noreferrer' : undefined}
-									>
-										{value.title}
-									</a>
+							const className = value.isPrimary ? 'btn btn-primary' : 'btn btn-outline-primary';
+							return (
+								<Link
+									key={index}
+									href={value.link}
+									className={className}
+									target={isExternal ? '_blank' : undefined}
+									rel={isExternal ? 'noreferrer' : undefined}
+								>
+									{value.title}
 								</Link>
 							);
 						})}

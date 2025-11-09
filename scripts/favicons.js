@@ -1,4 +1,7 @@
-const favicons = require("favicons")
+const faviconsModule = require("favicons")
+const favicons = typeof faviconsModule === 'function'
+  ? faviconsModule
+  : faviconsModule.favicons || faviconsModule.default
 const fs = require('fs')
 const Jimp = require('jimp')
 
@@ -58,11 +61,7 @@ const createFile = function (path, content) {
   })
 }
 
-const callback = function (error, response) {
-  if (error) {
-    console.error(error.message); // Error description e.g. "An unknown error has occurred"
-    return;
-  }
+const handleResponse = function (response) {
   // console.log(response.images); // Array of { name: string, contents: <buffer> }
   // console.log(response.files); // Array of { name: string, contents: <string> }
   // console.log(response.html); // Array of strings (html elements)
@@ -92,7 +91,8 @@ const createCircularSource = async () => {
   console.log('Generating favicons...');
   try {
     const circularSource = await createCircularSource();
-    favicons(circularSource, configuration, callback);
+    const response = await favicons(circularSource, configuration);
+    handleResponse(response);
   } catch (error) {
     console.error('Failed to generate favicons:', error);
     process.exit(1);

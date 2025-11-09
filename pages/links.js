@@ -40,13 +40,11 @@ function Button({ title, link, icon }) {
   return (
     <div className="row justify-content-center">
       <div className="card card-work mx-sm-4 my-2" style={{ width: "20rem" }}>
-        <Link href={link}>
-          <a target="_blank" rel="noreferrer">
-            <div className="d-flex align-items-center gap-3 py-3 px-3">
-              <h4 className="text-primary text-end mb-0 flex-grow-1">{title}</h4>
-              {icon && <FontAwesomeIcon size={24} icon={icon} className="icon-style" />}
-            </div>
-          </a>
+        <Link href={link} target="_blank" rel="noreferrer">
+          <div className="d-flex align-items-center gap-3 py-3 px-3">
+            <h4 className="text-primary text-end mb-0 flex-grow-1">{title}</h4>
+            {icon && <FontAwesomeIcon size={24} icon={icon} className="icon-style" />}
+          </div>
         </Link>
       </div>
     </div>

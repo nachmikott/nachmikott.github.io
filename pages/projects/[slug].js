@@ -15,7 +15,7 @@ export async function getStaticPaths() {
   const paths = projectCards
     .filter((card) => Boolean(card.slug))
     .map((card) => ({ params: { slug: card.slug } }));
-
+    
   return {
     paths,
     fallback: false,
@@ -112,10 +112,14 @@ export default function ProjectDetail({ project, readmeMarkdown }) {
             {project.icons && project.icons.length > 0 && (
               <div className="project-detail__icons">
                 {project.icons.map((item, index) => (
-                  <Link key={index} href={item.link}>
-                    <a className="icon-link" target="_blank" rel="noreferrer">
-                      <FontAwesomeIcon className="icon-style project-detail__icon" icon={item.icon} size="lg" />
-                    </a>
+                  <Link
+                    key={index}
+                    href={item.link}
+                    className="icon-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FontAwesomeIcon className="icon-style project-detail__icon" icon={item.icon} size="lg" />
                   </Link>
                 ))}
               </div>

@@ -9,11 +9,8 @@ export const Nav = ({ title, links }) => {
   return (
     <nav className="navbar navbar-expand-sm navbar-dark navbar-custom">
       <div className="container">
-        <Link href="/">
-          {/* <Image src={Logo} alt="Logo" width="36" height="36" className="vertical-align-middle" /> */}
-          <a className="navbar-brand text-light">
-            <span className="text-light">{title}</span>
-          </a>
+        <Link href="/" className="navbar-brand text-light">
+          <span className="text-light">{title}</span>
         </Link>
         <button
           className="custom-toggler navbar-toggler"
@@ -30,8 +27,8 @@ export const Nav = ({ title, links }) => {
         <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="primary-navigation">
           <div className="navbar-nav mb-2 mb-sm-0">
             {links.map((value, index) => (
-              <Link key={index} href={value.link}>
-                <a className="nav-link text-light">{value.title}</a>
+              <Link key={index} href={value.link} className="nav-link text-light">
+                {value.title}
               </Link>
             ))}
           </div>

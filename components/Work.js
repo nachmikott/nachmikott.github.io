@@ -76,10 +76,11 @@ export const Card = ({ title, description, icons, slug }) => {
 					<h4 className="text-primary">{title}</h4>
 					<p className="text-dark">{description}</p>
 				</div>
-				<div className="project-card__icons">
-					{icons && icons.map((value, index) => (
-						<Link key={index} href={value.link}>
-							<a
+					<div className="project-card__icons">
+						{icons && icons.map((value, index) => (
+							<Link
+								key={index}
+								href={value.link}
 								className="icon-link"
 								target="_blank"
 								rel="noreferrer"
@@ -87,10 +88,9 @@ export const Card = ({ title, description, icons, slug }) => {
 								onKeyDown={(event) => event.stopPropagation()}
 							>
 								<FontAwesomeIcon className="icon-style mx-1" icon={value.icon} size="2x" />
-							</a>
-						</Link>
-					))}
-				</div>
+							</Link>
+						))}
+					</div>
 			</div>
 		</div>
 	);

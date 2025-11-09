@@ -16,6 +16,7 @@ class WatchExternalFilesPlugin {
 
 const nextConfig = {
   reactStrictMode: true,
+  turbopack: {},
   webpack: (config, { isServer }) => {
     if (isServer) {
       const projectsFile = path.resolve(__dirname, 'projects.yaml');

@@ -92,7 +92,8 @@ export const contact = {
     },
     {
       title: "Schedule Meeting",
-      link: "https://calendly.com/nachmikott/30min",
+      link: "https://calendly.com/nachmikott/30min?hide_event_type_details=1&hide_gdpr_banner=1",
+      calendlyBadge: true,
       isPrimary: false,
     },
   ]
