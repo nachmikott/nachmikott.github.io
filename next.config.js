@@ -16,6 +16,7 @@ class WatchExternalFilesPlugin {
 
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   turbopack: {},
   webpack: (config, { isServer }) => {
     if (isServer) {
