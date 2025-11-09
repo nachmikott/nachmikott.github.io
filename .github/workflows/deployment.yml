@@ -24,10 +24,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set Environment Variables
-        run: echo "BASE_PATH=/${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
-      - name: Test Environment Variables
-        run: echo ${{ env.BASE_PATH }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
