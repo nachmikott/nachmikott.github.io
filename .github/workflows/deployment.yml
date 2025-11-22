@@ -1,4 +1,4 @@
-name: Personal Project Deployment Orchestrator
+name: Personal Project Deployment
 
 on:
   push:
