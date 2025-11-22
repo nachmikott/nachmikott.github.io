@@ -12,16 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # env:
-    # Repository name
-    # https://www.linkedin.com/pulse/deploy-nextjs-app-github-pages-federico-antu%C3%B1a/
-    # BASE_PATH: /${{ github.event.repository.name }}
-
     strategy:
       matrix:
         node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
@@ -30,7 +23,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm ci
-      # - run: npm run prebuild # build automatically runs prebuild
       - run: npm run build
       - run: touch ./out/.nojekyll
 
