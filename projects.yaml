@@ -26,6 +26,29 @@ projects:
   icons:
   - label: GitHub
     url: https://github.com/nachmikott/flask_wiki
+
+- slug: cascadia-js-hackathon-2026
+  title: Friendly Neighbor
+  description: '👋 "Friendly Neighbor", helps families navigate stressful evacuation scenarios with an interactive voice agent that plans a route to safety and notifies loved ones about the plan.'
+  demoVideo: https://www.loom.com/share/1aa79dfb6c984bd8a7ae0f8be502f4e8
+  icons:
+  - label: GitHub
+    url: https://github.com/nachmikott/cascadia-ai-hackathon-2026
+  - label: LinkedIn
+    url: https://www.linkedin.com/posts/nachmi-kott_cascadiajs-cascadiaaihackathon-vapi-ugcPost-7468776645458333696-xPfr/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFUD2q8BxlIhAMY2SvGokl5qbhiR8iaMVKs
+
+- slug: flask_wiki
+  title: Flask Wiki
+  description: 'A RESTful API, built using Flask, that serves data sourced from Wikitech’s
+    Analytics/AQS/Pageviews
+
+    RESTful APIs with additional functionality for analysis.
+
+    '
+  icons:
+  - label: GitHub
+    url: https://github.com/nachmikott/flask_wiki
+
 - slug: media-web-file-optimization
   title: Image optimization for the web
   description: 'Turn PNGs into a set of optimized files for the web at multiple DPRs
