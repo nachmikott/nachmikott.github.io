@@ -1,5 +1,5 @@
 projects:
-- slug: cascadia-js-hackathon-2025
+- slug: clueless-crafter
   title: Clueless Crafter
   description: '🏗️ "Clueless Crafter" helps reduce friction for real estate developers
     and
@@ -16,7 +16,7 @@ projects:
   - label: LinkedIn
     url: https://www.linkedin.com/posts/nachmi-kott_cascadiajs-cascadiaaihackathon-openai-activity-7378472914586812416-Rxt6
 
-- slug: cascadia-js-hackathon-2026
+- slug: friendly-neighbor
   title: Friendly Neighbor
   description: '👋 "Friendly Neighbor", helps families navigate stressful evacuation scenarios with an interactive voice agent that plans a route to safety and notifies loved ones about the plan.'
   demoVideo: https://www.loom.com/embed/1aa79dfb6c984bd8a7ae0f8be502f4e8
@@ -26,7 +26,7 @@ projects:
   - label: LinkedIn
     url: https://www.linkedin.com/posts/nachmi-kott_cascadiajs-cascadiaaihackathon-vapi-ugcPost-7468776645458333696-xPfr/
 
-- slug: flask_wiki
+- slug: flask-wiki
   title: Flask Wiki
   description: 'A RESTful API, built using Flask, that serves data sourced from Wikitech’s
     Analytics/AQS/Pageviews
