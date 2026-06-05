@@ -24,7 +24,7 @@ projects:
   - label: GitHub
     url: https://github.com/nachmikott/cascadia-ai-hackathon-2026
   - label: LinkedIn
-    url: https://www.linkedin.com/posts/nachmi-kott_cascadiajs-cascadiaaihackathon-vapi-ugcPost-7468776645458333696-xPfr/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFUD2q8BxlIhAMY2SvGokl5qbhiR8iaMVKs
+    url: https://www.linkedin.com/posts/nachmi-kott_cascadiajs-cascadiaaihackathon-vapi-ugcPost-7468776645458333696-xPfr/
 
 - slug: flask_wiki
   title: Flask Wiki
