@@ -15,17 +15,6 @@ projects:
     url: https://github.com/nachmikott/cascadia-js-hackathon-2025
   - label: LinkedIn
     url: https://www.linkedin.com/posts/nachmi-kott_cascadiajs-cascadiaaihackathon-openai-activity-7378472914586812416-Rxt6
-- slug: flask_wiki
-  title: Flask Wiki
-  description: 'A RESTful API, built using Flask, that serves data sourced from Wikitech’s
-    Analytics/AQS/Pageviews
-
-    RESTful APIs with additional functionality for analysis.
-
-    '
-  icons:
-  - label: GitHub
-    url: https://github.com/nachmikott/flask_wiki
 
 - slug: cascadia-js-hackathon-2026
   title: Friendly Neighbor
