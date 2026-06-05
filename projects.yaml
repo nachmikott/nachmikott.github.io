@@ -19,7 +19,7 @@ projects:
 - slug: cascadia-js-hackathon-2026
   title: Friendly Neighbor
   description: '👋 "Friendly Neighbor", helps families navigate stressful evacuation scenarios with an interactive voice agent that plans a route to safety and notifies loved ones about the plan.'
-  demoVideo: https://www.loom.com/share/1aa79dfb6c984bd8a7ae0f8be502f4e8
+  demoVideo: https://www.loom.com/embed/1aa79dfb6c984bd8a7ae0f8be502f4e8
   icons:
   - label: GitHub
     url: https://github.com/nachmikott/cascadia-ai-hackathon-2026
